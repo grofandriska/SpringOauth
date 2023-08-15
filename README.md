@@ -47,5 +47,6 @@ send a Get Request and add token as authorization bearer
 
 **********************************************************************
 Gróf András
-2020.08
+2023.08
+Pécs
 
