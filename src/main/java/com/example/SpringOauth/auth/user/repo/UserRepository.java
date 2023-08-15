@@ -1,6 +1,6 @@
-package com.example.SpringOauth.user.repo;
+package com.example.SpringOauth.auth.user.repo;
 
-import com.example.SpringOauth.user.model.User;
+import com.example.SpringOauth.auth.user.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

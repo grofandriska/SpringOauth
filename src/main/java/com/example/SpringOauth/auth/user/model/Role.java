@@ -1,4 +1,4 @@
-package com.example.SpringOauth.user.model;
+package com.example.SpringOauth.auth.user.model;
 
 public enum Role {
     USER,

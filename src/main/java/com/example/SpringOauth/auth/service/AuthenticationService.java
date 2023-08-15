@@ -3,10 +3,10 @@ package com.example.SpringOauth.auth.service;
 import com.example.SpringOauth.auth.model.AuthenticationRequest;
 import com.example.SpringOauth.auth.model.AuthenticationResponse;
 import com.example.SpringOauth.auth.model.RegisterRequest;
-import com.example.SpringOauth.config.JwtService;
-import com.example.SpringOauth.user.model.Role;
-import com.example.SpringOauth.user.model.User;
-import com.example.SpringOauth.user.repo.UserRepository;
+import com.example.SpringOauth.auth.config.JwtService;
+import com.example.SpringOauth.auth.user.model.Role;
+import com.example.SpringOauth.auth.user.model.User;
+import com.example.SpringOauth.auth.user.repo.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 
