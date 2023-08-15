@@ -1,4 +1,9 @@
 # Spring-boot Oauth2.0
+
+add sys32/drivers/hosts the server ip if you want to auth
+
+127.0.0.1 auth-server
+
 *********************************************************************
 
 # Postman usage
