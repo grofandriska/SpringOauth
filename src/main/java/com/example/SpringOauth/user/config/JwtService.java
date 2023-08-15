@@ -18,8 +18,6 @@ import java.util.function.Function;
 @Service
 @Data
 public class JwtService {
-
-
     private static final String SECRET_KEY = "aa4de0ea2b9f7e1a5cb1486335415c0236a8b3e2b2b4f70ec261117666117ce3";
 
     //Subjexct = email
