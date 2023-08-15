@@ -33,8 +33,10 @@ copy the token from repsone
 #3. Visit endpoint
 
 http://localhost:8080/api/v1/demo-controller
+send Get Request and add token as authorization bearer
 
-add token as authorization bearer
 
 **********************************************************************
+Gróf András
+2020.08
 
