@@ -1,4 +1,4 @@
-package com.example.SpringOauth.user.config;
+package com.example.SpringOauth.config;
 
 import com.example.SpringOauth.user.repo.UserRepository;
 import lombok.RequiredArgsConstructor;

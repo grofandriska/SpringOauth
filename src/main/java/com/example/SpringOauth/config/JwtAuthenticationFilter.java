@@ -1,4 +1,4 @@
-package com.example.SpringOauth.user.config;
+package com.example.SpringOauth.config;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
