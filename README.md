@@ -1,5 +1,6 @@
 # SpringOauth
 
+**********************************************************************
 
 #1: Save User
 
@@ -13,6 +14,7 @@ send JSON in Post Request
     "password":"123"
 }
 
+**********************************************************************
 
 #2. Authenticate
 
@@ -26,9 +28,13 @@ send JSON in Post Request
 
 copy the token from repsone
 
+**********************************************************************
+
 3. Visit endpoint
 
 http://localhost:8080/api/v1/demo-controller
 
 add token as authorization bearer
+
+**********************************************************************
 
