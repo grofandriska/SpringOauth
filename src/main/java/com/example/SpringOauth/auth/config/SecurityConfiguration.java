@@ -22,20 +22,29 @@ public class SecurityConfiguration {
     private final AuthenticationProvider authenticationProvider;
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf().disable().authorizeHttpRequests(authorizeRequests ->
-                authorizeRequests
-                        .requestMatchers(new AntPathRequestMatcher("/api/v1/auth/**"))
-                        .permitAll()
-                        .anyRequest()
-                        .authenticated()
-                )
-                .sessionManagement(sessionManagement -> sessionManagement
-                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-
-                .authenticationProvider(authenticationProvider)
-                .addFilterBefore(jwtAuthFilter, AbstractPreAuthenticatedProcessingFilter.class);
-
-        return http.build();
-    }
+	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+		http.csrf().disable().authorizeHttpRequests(authorizeRequests ->
+						authorizeRequests
+								.requestMatchers(new AntPathRequestMatcher("/api/v1/auth/register")).permitAll()
+								.requestMatchers(new AntPathRequestMatcher("/api/v1/auth/authenticate")).permitAll()
+								.requestMatchers(new AntPathRequestMatcher("/api/v1/demo-controller")).hasAnyAuthority("GOD")
+								.anyRequest().authenticated())
+				.sessionManagement(sessionManagement -> sessionManagement
+						.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
+						.sessionFixation(SessionManagementConfigurer.SessionFixationConfigurer::none))
+				.authenticationProvider(authenticationProvider)
+				.addFilterBefore(jwtAuthFilter, AbstractPreAuthenticatedProcessingFilter.class)
+				.formLogin(form -> form
+						.defaultSuccessUrl("/api/v1/demo-controller")
+						.permitAll())
+				.logout(logout -> logout
+						.logoutRequestMatcher(new AntPathRequestMatcher("/logout")) // Use the desired logout URL
+						.invalidateHttpSession(true)
+						.deleteCookies("JSESSIONID") // Delete the session cookie
+						.logoutSuccessUrl("/login")) // Redirect to login page after logout
+				.headers().frameOptions().sameOrigin();
+		
+		
+		return http.build();
+	}
 }
